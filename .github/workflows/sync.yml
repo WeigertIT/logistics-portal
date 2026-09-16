@@ -14,10 +14,14 @@ jobs:
         run: |
           git remote add upstream https://github.com/eurofurence/logistics-portal.git
           git fetch upstream
+
+          # Synchronisiere main
           git checkout main
           git merge upstream/main
           git push origin main
-          git checkout main-dev
+
+          # Synchronisiere main-dev (explizit mit upstream/main-dev)
+          git checkout -B main-dev upstream/main-dev
           git merge upstream/main-dev
           git push origin main-dev
         env:
