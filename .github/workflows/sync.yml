@@ -17,5 +17,8 @@ jobs:
           git checkout main
           git merge upstream/main
           git push origin main
+          git checkout main-dev
+          git merge upstream/main-dev
+          git push origin main-dev
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
